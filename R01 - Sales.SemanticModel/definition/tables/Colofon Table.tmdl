@@ -1,0 +1,82 @@
+table 'Colofon Table'
+	lineageTag: 339c1d3e-4034-4706-a2ba-85091b74644d
+
+	column Order
+		dataType: int64
+		formatString: 0
+		lineageTag: 1d3eb9f0-a457-406e-8389-e59736410c4b
+		summarizeBy: none
+		sourceColumn: Order
+
+		annotation SummarizationSetBy = Automatic
+
+	column Page
+		dataType: string
+		lineageTag: 4bc24a94-3105-4e45-9af7-adff9a6d26d4
+		summarizeBy: none
+		sourceColumn: Page
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: d1bb35af-f6f7-43e0-8514-b4cb86ab10eb
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Type (afspraak)'
+		dataType: string
+		lineageTag: 78f21791-4542-49a6-9674-8e242d0d33bd
+		summarizeBy: none
+		sourceColumn: Type (afspraak)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Descr Type'
+		dataType: string
+		lineageTag: aef5236f-48f6-4f91-92b9-0309d1d5adb1
+		summarizeBy: none
+		sourceColumn: Descr Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Considerations
+		dataType: string
+		lineageTag: 1df60eec-07a9-4ffc-9597-844058bd9c58
+		summarizeBy: none
+		sourceColumn: Considerations
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last Contact'
+		dataType: string
+		lineageTag: f55ac05f-b798-4c7d-9950-a800302282bc
+		summarizeBy: none
+		sourceColumn: Last Contact
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Approved By'
+		dataType: string
+		lineageTag: 38d2d3d4-52a4-4c49-a4a0-386697784ea0
+		summarizeBy: none
+		sourceColumn: Approved By
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Colofon Table' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("G:\Shared drives\ROX Analytics\02_ROX Internal\15_Templates\UI Toolkit\Templates\Colofon Template.xlsx"), null, true),
+				    Table1_Table = Source{[Item="Table1",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Table1_Table,{{"Order", Int64.Type}, {"Page", type text}, {"Description", type text}, {"Type (afspraak)", type any}, {"Descr Type", type any}, {"Considerations", type any}, {"Last Contact", type any}, {"Approved By", type any}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

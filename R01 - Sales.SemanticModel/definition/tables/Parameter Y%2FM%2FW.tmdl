@@ -1,0 +1,55 @@
+table 'Parameter Y/M/W'
+	lineageTag: 020f2b4c-395d-4d42-9395-c3281352ce27
+
+	column Parameter
+		dataType: string
+		lineageTag: 4f271a65-0f16-4339-949c-d31ff8a77610
+		summarizeBy: none
+		isDataTypeInferred
+		sourceColumn: [Value1]
+		sortByColumn: 'Parameter Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Parameter Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Fields'
+		dataType: string
+		isHidden
+		lineageTag: 28fc1884-f414-459b-b10e-aa1ce1570b83
+		summarizeBy: none
+		isDataTypeInferred
+		sourceColumn: [Value2]
+		sortByColumn: 'Parameter Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Order'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: e1e4851e-2c2c-4d4f-ade5-ce2c9d517d43
+		summarizeBy: sum
+		isDataTypeInferred
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Parameter Y/M/W' = calculated
+		mode: import
+		source =
+				{
+				    ("Month name (short)", NAMEOF('Dim calendar'[Month name (short)]), 0),
+				    ("Year", NAMEOF('Dim calendar'[Year]), 1),
+				    ("Week no.", NAMEOF('Dim calendar'[Week no.]), 2)
+				}
+
+	annotation PBI_Id = 1dc230a9465546d69b9e8ee042244bcc
+

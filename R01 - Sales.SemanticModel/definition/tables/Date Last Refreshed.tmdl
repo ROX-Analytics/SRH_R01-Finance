@@ -1,0 +1,36 @@
+table 'Date Last Refreshed'
+	lineageTag: 0301fbe1-26e6-4368-964d-7869fbdcb112
+
+	measure 'Last Refreshed' =
+			
+			VALUES('Date Last Refreshed'[Date Last Refreshed])-1/6
+		formatString: General Date
+		lineageTag: 39978074-1c64-4ec4-a7a3-e327cdc4019f
+
+	measure Tekst = "Data last updated on: "& UNICHAR(10)&FORMAT('Date Last Refreshed'[Last Refreshed],"dd-mmm-yy") &" at "&FORMAT('Date Last Refreshed'[Last Refreshed],"hh:mm")
+		lineageTag: c544f032-79a4-420b-9b72-55ee58aefb0c
+
+	column 'Date Last Refreshed'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4ddba66d-bc89-4ef1-88a3-1b17e0040e9d
+		summarizeBy: none
+		sourceColumn: Date Last Refreshed
+
+		variation Variation
+			isDefault
+			relationship: b7877487-753a-409a-8500-c77dba4ad915
+			defaultHierarchy: LocalDateTable_b84e7151-7e2a-4cab-ad79-4946e703293f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Date Last Refreshed-9d24628c-3f04-47aa-8b99-1364b8b1847d' = m
+		mode: import
+		source =
+				let
+				    Source = #table(type table[Date Last Refreshed=datetime], {{DateTime.LocalNow()}})
+				in
+				    Source
+
+	annotation PBI_ResultType = Table
+

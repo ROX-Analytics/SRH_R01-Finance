@@ -1,0 +1,31 @@
+relationship c4f72fb2-3307-fd86-179a-82411123c4d4
+	crossFilteringBehavior: bothDirections
+	fromColumn: '_Predefined date slicer'.Date
+	toColumn: 'Dim calendar'.Date
+
+relationship b7877487-753a-409a-8500-c77dba4ad915
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Date Last Refreshed'.'Date Last Refreshed'
+	toColumn: LocalDateTable_b84e7151-7e2a-4cab-ad79-4946e703293f.Date
+
+relationship 620dcd0d-9c76-434c-b519-d57e4661f8ab
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Dim calendar'.Date
+	toColumn: LocalDateTable_88eb3974-31fc-4e7e-94df-84f4eaa7ea4e.Date
+
+relationship f34309eb-2520-4153-88ea-25cd22618c67
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Dim calendar'.'Start date year'
+	toColumn: LocalDateTable_fc7ebe9e-ee97-4ee0-91aa-abca5dd8c310.Date
+
+relationship cf310923-958d-4611-92ec-431294baa50b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: '_Predefined date slicer'.'Start date year'
+	toColumn: LocalDateTable_2184184d-88e8-4e4c-a630-c2cadb367397.Date
+
+relationship AutoDetected_2668c342-87a2-44f5-8ad9-7191ad17cdb3
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'Dim Colofon Type'.Order
+	toColumn: 'Colofon Table'.Order
+

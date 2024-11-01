@@ -1,0 +1,187 @@
+table 'Measure Table'
+	lineageTag: 32200705-3727-49ed-87d7-104a2359c42d
+
+	measure 'Cascade Filter (Slicer)' =
+			
+			// Insert Fact Table in place of the dim calendar. Can add multiple fact tables with || operator
+			INT(NOT ISEMPTY('Dim calendar'))
+		formatString: 0
+		lineageTag: 3857b274-be35-4b29-9c4e-bd284bdc66bf
+
+	measure 'Date custom filter' =
+			
+			IF(
+			    MAX('_Predefined date slicer'[Order]) = 8,
+			    1,
+			    0
+			)
+		formatString: 0
+		lineageTag: 5dbff872-5b71-49ea-baa6-145b9da6b16e
+
+	measure 'Cascade Filter Matrices/Tables' = ```
+			
+			
+			INT(
+			    NOT(
+			        ISEMPTY('Dim calendar') || [Date custom filter] = 0 
+			    )
+			)
+			```
+		formatString: 0
+		lineageTag: 79f427c4-aac8-4241-9998-d689c69fc201
+
+	measure 'Selected filters' = ```
+			
+			VAR MaxFilters = 25
+			
+			VAR selfilters =
+			IF ( 
+			    ISFILTERED ( 'Dim Calendar'[Year] ), 
+			    VAR ___f = FILTERS ( 'Dim Calendar'[Year] ) 
+			    VAR ___r = COUNTROWS ( ___f ) 
+			    VAR ___t = TOPN ( MaxFilters, ___f, 'Dim Calendar'[Year] )
+			    VAR ___d = CONCATENATEX ( ___t, 'Dim Calendar'[Year], ", " )
+			    VAR ___x = "Year: " & ___d & IF(___r > MaxFilters, ", ... [" & ___r & " items selected]") & " " 
+			    RETURN REPLACE(___x, LEN(___x),1," | ")
+			)
+			&
+			IF ( 
+			    ISFILTERED ( 'Dim calendar'[Year (wk)] ), 
+			    VAR ___f = FILTERS ( 'Dim Calendar'[Year (wk)] ) 
+			    VAR ___r = COUNTROWS ( ___f ) 
+			    VAR ___t = TOPN ( MaxFilters, ___f, 'Dim Calendar'[Year (wk)] )
+			    VAR ___d = CONCATENATEX ( ___t, 'Dim Calendar'[Year (wk)], ", " )
+			    VAR ___x = "Year: " & ___d & IF(___r > MaxFilters, ", ... [" & ___r & " items selected]") & " " 
+			    RETURN REPLACE(___x, LEN(___x),1," | ")
+			)
+			&
+			IF ( 
+			    ISFILTERED ( 'Dim Calendar'[Month name (short)] ), 
+			    VAR ___f = FILTERS ( 'Dim Calendar'[Month name (short)] ) 
+			    VAR ___r = COUNTROWS ( ___f ) 
+			    VAR ___t = TOPN ( MaxFilters, ___f, 'Dim Calendar'[Month name (short)] )
+			    VAR ___d = CONCATENATEX ( ___t, 'Dim Calendar'[Month name (short)], ", " )
+			    VAR ___x = "Month: " & ___d & IF(___r > MaxFilters, ", ... [" & ___r & " items selected]") & " " 
+			    RETURN REPLACE(___x, LEN(___x),1," | ")
+			)
+			&
+			IF ( 
+			    ISFILTERED ( 'Dim calendar'[Month no.] ), 
+			    VAR ___f = FILTERS ( 'Dim Calendar'[Month no.] ) 
+			    VAR ___r = COUNTROWS ( ___f ) 
+			    VAR ___t = TOPN ( MaxFilters, ___f, 'Dim Calendar'[Month no.] )
+			    VAR ___d = CONCATENATEX ( ___t, 'Dim Calendar'[Month no.], ", " )
+			    VAR ___x = "Month no: " & ___d & IF(___r > MaxFilters, ", ... [" & ___r & " items selected]") & " " 
+			    RETURN REPLACE(___x, LEN(___x),1," | ")
+			)
+			&
+			IF ( 
+			    ISFILTERED ( 'Dim calendar'[Week no.] ), 
+			    VAR ___f = FILTERS ( 'Dim Calendar'[Week no.] ) 
+			    VAR ___r = COUNTROWS ( ___f ) 
+			    VAR ___t = TOPN ( MaxFilters, ___f, 'Dim Calendar'[Week no.] )
+			    VAR ___d = CONCATENATEX ( ___t, 'Dim Calendar'[Week no.], ", " )
+			    VAR ___x = "Week no: " & ___d & IF(___r > MaxFilters, ", ... [" & ___r & " items selected]") & " " 
+			    RETURN REPLACE(___x, LEN(___x),1," | ")
+			)
+			&
+			IF ( 
+			    ISFILTERED ( 'DimSubDepartment'[SUBDEPARTMENT]), 
+			    VAR ___f = FILTERS ( 'DimSubDepartment'[SUBDEPARTMENT] ) 
+			    VAR ___r = COUNTROWS ( ___f ) 
+			    VAR ___t = TOPN ( MaxFilters, ___f, 'DimSubDepartment'[SUBDEPARTMENT] )
+			    VAR ___d = CONCATENATEX ( ___t, 'DimSubDepartment'[SUBDEPARTMENT], ", " )
+			    VAR ___x = "Sub-department: " & ___d & IF(___r > MaxFilters, ", ... [" & ___r & " items selected]") & " " 
+			    RETURN REPLACE(___x, LEN(___x),1," | ")
+			)
+			&
+			IF ( 
+			    ISFILTERED ( 'DimItems'[Description]), 
+			    VAR ___f = FILTERS ( 'DimItems'[Description] ) 
+			    VAR ___r = COUNTROWS ( ___f ) 
+			    VAR ___t = TOPN ( MaxFilters, ___f, 'DimItems'[Description] )
+			    VAR ___d = CONCATENATEX ( ___t, 'DimItems'[Description], ", " )
+			    VAR ___x = "Item: " & ___d & IF(___r > MaxFilters, ", ... [" & ___r & " items selected]") & " " 
+			    RETURN REPLACE(___x, LEN(___x),1," | ")
+			)
+			&
+			IF ( 
+			    ISFILTERED ( 'DimItems'[Brand]), 
+			    VAR ___f = FILTERS ( 'DimItems'[Brand] ) 
+			    VAR ___r = COUNTROWS ( ___f ) 
+			    VAR ___t = TOPN ( MaxFilters, ___f, 'DimItems'[Brand] )
+			    VAR ___d = CONCATENATEX ( ___t, 'DimItems'[Brand], ", " )
+			    VAR ___x = "Brand: " & ___d & IF(___r > MaxFilters, ", ... [" & ___r & " items selected]") & " " 
+			    RETURN REPLACE(___x, LEN(___x),1," | ")
+			)
+			&
+			IF ( 
+			    ISFILTERED ( 'DimVendor'[Vendor name]), 
+			    VAR ___f = FILTERS ( 'DimVendor'[Vendor name] ) 
+			    VAR ___r = COUNTROWS ( ___f ) 
+			    VAR ___t = TOPN ( MaxFilters, ___f, 'DimVendor'[Vendor name] )
+			    VAR ___d = CONCATENATEX ( ___t, 'DimVendor'[Vendor name], ", " )
+			    VAR ___x = "Vendor: " & ___d & IF(___r > MaxFilters, ", ... [" & ___r & " items selected]") & " " 
+			    RETURN REPLACE(___x, LEN(___x),1," | ")
+			)
+			&
+			IF ( 
+			    ISFILTERED ( 'DimStorenames'[Store name]), 
+			    VAR ___f = FILTERS ( 'DimStorenames'[Store name] ) 
+			    VAR ___r = COUNTROWS ( ___f ) 
+			    VAR ___t = TOPN ( MaxFilters, ___f, 'DimStorenames'[Store name] )
+			    VAR ___d = CONCATENATEX ( ___t, 'DimStorenames'[Store name], ", " )
+			    VAR ___x = "Store: " & ___d & IF(___r > MaxFilters, ", ... [" & ___r & " items selected]") & " " 
+			    RETURN REPLACE(___x, LEN(___x),1," | ")
+			)
+			&
+			IF ( 
+			    ISFILTERED ( 'DimDepartment'[Description]), 
+			    VAR ___f = FILTERS ( 'DimDepartment'[Description] ) 
+			    VAR ___r = COUNTROWS ( ___f ) 
+			    VAR ___t = TOPN ( MaxFilters, ___f, 'DimDepartment'[Description] )
+			    VAR ___d = CONCATENATEX ( ___t, 'DimDepartment'[Description], ", " )
+			    VAR ___x = "Department: " & ___d & IF(___r > MaxFilters, ", ... [" & ___r & " items selected]") & " " 
+			    RETURN REPLACE(___x, LEN(___x),1," | ")
+			)
+			&
+			IF ( 
+			    ISFILTERED ( 'DimSubDepartment'[Sub-Department Full]), 
+			    VAR ___f = FILTERS ( 'DimSubDepartment'[Sub-Department Full] ) 
+			    VAR ___r = COUNTROWS ( ___f ) 
+			    VAR ___t = TOPN ( MaxFilters, ___f, 'DimSubDepartment'[Sub-Department Full] )
+			    VAR ___d = CONCATENATEX ( ___t, 'DimSubDepartment'[Sub-Department Full], ", " )
+			    VAR ___x = "Subdepartment: " & ___d & IF(___r > MaxFilters, ", ... [" & ___r & " items selected]") & " " 
+			    RETURN REPLACE(___x, LEN(___x),1," | ")
+			)
+			&
+			IF ( 
+			    ISFILTERED ( 'DimSourceSystem'[Source Name]), 
+			    VAR ___f = FILTERS ( 'DimSourceSystem'[Source Name] ) 
+			    VAR ___r = COUNTROWS ( ___f ) 
+			    VAR ___t = TOPN ( MaxFilters, ___f, 'DimSourceSystem'[Source Name] )
+			    VAR ___d = CONCATENATEX ( ___t, 'DimSourceSystem'[Source Name], ", " )
+			    VAR ___x = "Source: " & ___d & IF(___r > MaxFilters, ", ... [" & ___r & " items selected]") & " " 
+			    RETURN REPLACE(___x, LEN(___x),1," | ")
+			)
+			RETURN
+			IF(
+			    LEN(selfilters)>0,
+			    REPLACE(selfilters, LEN(selfilters)-2,3,""),
+			    ""
+			)
+			```
+		lineageTag: f974b010-2fd0-48ee-9231-d2b2f8bf310c
+
+	partition 'Measure Table' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WMlSKjQUA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", Int64.Type}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

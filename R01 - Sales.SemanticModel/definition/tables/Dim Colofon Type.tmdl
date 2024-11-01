@@ -1,0 +1,34 @@
+table 'Dim Colofon Type'
+	lineageTag: b69b1f78-3e52-44aa-9ae6-696bd97fad1a
+
+	column Order
+		dataType: int64
+		formatString: 0
+		lineageTag: b1dec822-95f8-4199-82bb-2598c69c1f00
+		summarizeBy: none
+		sourceColumn: Order
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		lineageTag: ab3733b7-af56-4f6a-b524-ed48140ab2fb
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dim Colofon Type' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("G:\Shared drives\ROX Analytics\02_ROX Internal\15_Templates\UI Toolkit\Templates\Colofon Template.xlsx"), null, true),
+				    Table2_Table = Source{[Item="Table2",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Table2_Table,{{"Order", Int64.Type}, {"Type", type text}})
+				in
+				    #"Changed Type"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

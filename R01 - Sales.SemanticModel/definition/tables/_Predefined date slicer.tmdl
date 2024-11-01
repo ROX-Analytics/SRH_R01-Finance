@@ -1,0 +1,383 @@
+table '_Predefined date slicer'
+	lineageTag: 3b58a127-acbe-4059-b93c-4d3c18d2b707
+
+	column Date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: bcf2dd9c-5c9d-4d36-ad30-f88ab6576659
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Dim calendar[Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: ee338541-cdba-4c09-a0af-7a967b0a95c1
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Dim calendar[Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month no.'
+		dataType: int64
+		formatString: 0
+		lineageTag: e07b0911-e495-45ff-8236-e727cae32a6d
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Dim calendar[Month no.]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month no. (leading zeros)'
+		dataType: string
+		lineageTag: 75a422a1-7df7-4cf4-9d97-e89791e0de36
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Dim calendar[Month no. (leading zeros)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month name (long)'
+		dataType: string
+		lineageTag: d50f0400-ba6b-4e0f-90da-ae6112a83246
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Dim calendar[Month name (long)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month name (short)'
+		dataType: string
+		lineageTag: cb7c643a-fa7b-431c-a02a-f54e55092673
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Dim calendar[Month name (short)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		dataType: string
+		lineageTag: 30b15be2-2ed7-496b-b259-638ac2c10ba5
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Dim calendar[Quarter]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week of Year'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7ce08ac1-0496-4b02-94f3-468896b9c1df
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Dim calendar[Week of Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week of Month'
+		dataType: int64
+		formatString: 0
+		lineageTag: 8e9a34d6-42cb-45c7-9fe1-6c477aae5dd1
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Dim calendar[Week of Month]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Day
+		dataType: int64
+		formatString: 0
+		lineageTag: 9052f27d-fc37-466d-8d61-c89baebcf0c2
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Dim calendar[Day]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of week no.'
+		dataType: int64
+		formatString: 0
+		lineageTag: ab754c9d-efa1-47ba-b2df-8fb80c4faf7b
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Dim calendar[Day of week no.]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Year'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0f04b78c-5d04-40c2-a7d5-4f0963edec09
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Dim calendar[Day of Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of week'
+		dataType: string
+		lineageTag: c8c9709a-dad9-4fc1-836b-651dbf765c2b
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Dim calendar[Day of week]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of week short'
+		dataType: string
+		lineageTag: ae194462-db60-4a68-b68f-dadd0184047b
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Dim calendar[Day of week short]
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateFormatted
+		dataType: string
+		lineageTag: df273082-1872-43fb-b8b6-ec01dfe02d84
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Dim calendar[DateFormatted]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year/Month no.'
+		dataType: string
+		lineageTag: e4999b88-6481-4032-b357-2bc290decb35
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Dim calendar[Year/Month no.]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year/Month name (short)'
+		dataType: string
+		lineageTag: 3a51435d-5883-4fc9-9326-d339d634782b
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Dim calendar[Year/Month name (short)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year/Quarter
+		dataType: string
+		lineageTag: 750a7c36-8aed-4295-adab-8f3be99c305f
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Dim calendar[Year/Quarter]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week no.'
+		dataType: int64
+		formatString: 0
+		lineageTag: a759b951-1cac-459a-958c-b043321bde97
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Dim calendar[Week no.]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year (wk)'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6a397f8d-2ac2-474b-956e-2d893a02ee28
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Dim calendar[Year (wk)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year/Week
+		dataType: string
+		lineageTag: 039d29d0-f8fd-4fd4-a097-82deddf52d2d
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Dim calendar[Year/Week]
+
+		annotation SummarizationSetBy = Automatic
+
+	column WY
+		dataType: int64
+		formatString: 0
+		lineageTag: de548124-33a7-46f9-9e0d-fa46a5636e5b
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Dim calendar[WY]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week no. (relative)'
+		dataType: string
+		lineageTag: 948320e5-265c-4802-8fa6-449c3d51f200
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Dim calendar[Week no. (relative)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year (wk) (relative)'
+		dataType: string
+		lineageTag: 26e5c8c4-ca8b-4e6d-8aff-58b18ea4dcc2
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Dim calendar[Year (wk) (relative)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year (relative)'
+		dataType: string
+		lineageTag: cc57372c-f607-4c84-8bdc-6bac2376e7ff
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Dim calendar[Year (relative)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter (relative)'
+		dataType: string
+		lineageTag: 80a418da-c1db-48f6-942b-fa4fd21a5648
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Dim calendar[Quarter (relative)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month name (relative)'
+		dataType: string
+		lineageTag: 087fc8d4-9d48-493f-896b-16dbc6a3ca4f
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Dim calendar[Month name (relative)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Year (wk) '
+		dataType: int64
+		formatString: 0
+		lineageTag: da4f527d-5544-4a1b-bbe5-bfa88490f8ab
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Dim calendar[Day of Year (wk) ]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Start date year'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b6c06baa-185f-487b-9ecc-911ca61f401f
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Dim calendar[Start date year]
+
+		variation Variation
+			isDefault
+			relationship: cf310923-958d-4611-92ec-431294baa50b
+			defaultHierarchy: LocalDateTable_2184184d-88e8-4e4c-a630-c2cadb367397.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Always
+		dataType: int64
+		formatString: 0
+		lineageTag: 834f7e60-2cee-4a86-9b4e-fd3cb4fb4189
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Dim calendar[Always]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Period
+		dataType: string
+		lineageTag: 15f9afe6-23aa-4f6e-bba2-11a060ceddb8
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [Period]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Order
+		dataType: int64
+		formatString: 0
+		lineageTag: 90b2c381-9585-474f-bdb9-e39e6e6554e3
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [Order]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter no.'
+		dataType: int64
+		formatString: 0
+		lineageTag: 572ae92d-9da5-4ace-83f6-04532c2b569c
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Dim calendar[Quarter no.]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition '_Predefined date slicer' = calculated
+		mode: import
+		source = ```
+				
+				VAR _datetable = 'Dim calendar'
+				VAR _today = TODAY()
+				VAR _month = MONTH(TODAY())
+				VAR _year = YEAR(TODAY())
+				VAR _thismonthstart = DATE(_year,_month,1)
+				VAR _thisyearstart = DATE(_year,1,1)
+				VAR _lastmonthstart = EDATE(_thismonthstart,-1)
+				VAR _lastmonthend = _thismonthstart-1  
+				VAR _thisquarterstart = DATE(YEAR(_today),SWITCH(true,_month>9,10,_month>6,7,_month>3,4,1),1)
+				
+				
+				RETURN UNION(
+				    ADDCOLUMNS(FILTER(_datetable,[Date]=_today),"Period","Today","Order",1),
+				    ADDCOLUMNS(FILTER(_datetable,[Date]=_today-1),"Period","Yesterday","Order",2),
+				    ADDCOLUMNS(FILTER(_datetable,[Date]>_today-7),"Period","Last 7 Days","Order",3),
+				    ADDCOLUMNS(FILTER(_datetable,[Date]>=_thismonthstart),"Period","This Month","Order",4),
+				    ADDCOLUMNS(FILTER(_datetable,[Date]>=_thisquarterstart),"Period","This Quarter","Order",5),
+				    ADDCOLUMNS(FILTER(_datetable,[Date]>=_thisyearstart),"Period","This Year","Order",6),
+				    ADDCOLUMNS(FILTER(_datetable,[Date]>_today-30),"Period","Last 30 Days","Order",7),
+				    ADDCOLUMNS(_datetable,"Period","Custom...","Order",8)
+				    )
+				```
+
+	annotation PBI_Id = 71684e2e650d4435bc5da431abcfa162
+

@@ -1,0 +1,447 @@
+table 'Dim calendar'
+	lineageTag: 5baf3ffa-0d91-488c-a62d-5eb84691d9ce
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: abee3791-0c3e-49f8-a608-9fbbc027d675
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: 620dcd0d-9c76-434c-b519-d57e4661f8ab
+			defaultHierarchy: LocalDateTable_88eb3974-31fc-4e7e-94df-84f4eaa7ea4e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: d07816c8-d6e8-434a-9ec4-c2676dff042f
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month no.'
+		dataType: int64
+		formatString: 0
+		lineageTag: a59457c7-4ef2-4fdd-81bd-ac4fbb0c995d
+		summarizeBy: sum
+		sourceColumn: Month no.
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month no. (leading zeros)'
+		dataType: string
+		lineageTag: b5392224-394c-4896-aaae-b8e1ba3bb1d9
+		summarizeBy: none
+		sourceColumn: Month no. (leading zeros)
+		sortByColumn: 'Month no.'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month name (long)'
+		dataType: string
+		lineageTag: da8e2a64-baa4-48cd-8cd7-634c57344626
+		summarizeBy: none
+		sourceColumn: Month name (long)
+		sortByColumn: 'Month no.'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month name (short)'
+		dataType: string
+		lineageTag: 1e4ea6df-0a12-410b-85de-4037fbcb3a2a
+		summarizeBy: none
+		sourceColumn: Month name (short)
+		sortByColumn: 'Month no.'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		dataType: string
+		lineageTag: 84b260ee-d417-4694-a881-a3e904e6d6fe
+		summarizeBy: none
+		sourceColumn: Quarter
+		sortByColumn: 'Quarter no.'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week of Year'
+		dataType: int64
+		formatString: 0
+		lineageTag: c24e199c-4295-41ee-9ec9-515384e2947a
+		summarizeBy: sum
+		sourceColumn: Week of Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week of Month'
+		dataType: int64
+		formatString: 0
+		lineageTag: a8cc36c1-817c-468f-b286-9edaab7e09dc
+		summarizeBy: sum
+		sourceColumn: Week of Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Day
+		dataType: int64
+		formatString: 0
+		lineageTag: 80633c47-1a8d-4013-a846-49ebd05ecbef
+		summarizeBy: sum
+		sourceColumn: Day
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of week no.'
+		dataType: int64
+		formatString: 0
+		lineageTag: 31327153-0aa5-4c94-87ce-dd03ef702e61
+		summarizeBy: sum
+		sourceColumn: Day of week no.
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Year'
+		dataType: int64
+		formatString: 0
+		lineageTag: 145ad948-6f90-4ba7-89df-fc5a439c8b22
+		summarizeBy: sum
+		sourceColumn: Day of Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of week'
+		dataType: string
+		lineageTag: 50c7292f-a728-4241-a7a7-a22fb481f651
+		summarizeBy: none
+		sourceColumn: Day of week
+		sortByColumn: 'Day of week no.'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of week short'
+		dataType: string
+		lineageTag: da490dd6-c120-4b56-8cd6-6b8fdd8b09a9
+		summarizeBy: none
+		sourceColumn: Day of week short
+		sortByColumn: 'Day of week no.'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateFormatted
+		dataType: string
+		lineageTag: ce6c5ea3-c201-45a1-98a7-b35864d56090
+		summarizeBy: none
+		sourceColumn: DateFormatted
+		sortByColumn: Date
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year/Month no.'
+		dataType: string
+		lineageTag: cc6d09e4-9bdf-4c76-a6ba-28b423a0d5a0
+		summarizeBy: none
+		sourceColumn: Year/Month no.
+		sortByColumn: 'Month no.'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year/Month name (short)'
+		dataType: string
+		lineageTag: 79eac478-b2d3-45e1-ac58-655b05d82e6d
+		summarizeBy: none
+		sourceColumn: Year/Month name (short)
+		sortByColumn: 'Month no.'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year/Quarter
+		dataType: string
+		lineageTag: 061ba8d8-ac6f-4980-a548-2ff532efd7ae
+		summarizeBy: none
+		sourceColumn: Year/Quarter
+		sortByColumn: 'Quarter no.'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week no.'
+		dataType: int64
+		formatString: 0
+		lineageTag: f9be8241-0275-47b4-9b68-dce9661ff8fd
+		summarizeBy: sum
+		sourceColumn: Week no.
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year (wk)'
+		dataType: int64
+		formatString: 0
+		lineageTag: b0c625d9-1437-4447-bf9d-7271ec6199cf
+		summarizeBy: sum
+		sourceColumn: Year (wk)
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year/Week
+		dataType: string
+		lineageTag: 62dc12d0-b5b6-4cf0-8be7-6b683da83ef9
+		summarizeBy: none
+		sourceColumn: Year/Week
+		sortByColumn: 'Week no.'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column WY
+		dataType: int64
+		formatString: 0
+		lineageTag: 73fde300-69b5-4b51-aa23-c9221c29d7b3
+		summarizeBy: sum
+		sourceColumn: WY
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week no. (relative)'
+		dataType: string
+		lineageTag: 28a70952-71c7-4616-9428-7a9ac971c73b
+		summarizeBy: none
+		sourceColumn: Week no. (relative)
+		sortByColumn: 'Week no.'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year (wk) (relative)'
+		dataType: string
+		lineageTag: 0e85554c-1ffc-41b5-afa7-f2629f254487
+		summarizeBy: none
+		sourceColumn: Year (wk) (relative)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year (relative)'
+		dataType: string
+		lineageTag: 647c0bb3-b8e1-4141-94f6-f4fc23e818fd
+		summarizeBy: none
+		sourceColumn: Year (relative)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter (relative)'
+		dataType: string
+		lineageTag: f2803390-21ee-407b-99e1-e578eee03761
+		summarizeBy: none
+		sourceColumn: Quarter (relative)
+		sortByColumn: 'Quarter no.'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month name (relative)'
+		dataType: string
+		lineageTag: 3a8a6bb0-8350-4c33-9d4a-903a7d5eea88
+		summarizeBy: none
+		sourceColumn: Month name (relative)
+		sortByColumn: 'Month no.'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Year (wk) '
+		dataType: int64
+		formatString: 0
+		lineageTag: 3b48cf1a-458a-43a6-8770-3684f90c8147
+		summarizeBy: sum
+		sourceColumn: "Day of Year (wk) "
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Start date year'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 72ab6708-23d8-4f41-a86d-3f8b4af21366
+		summarizeBy: none
+		sourceColumn: Start date year
+
+		variation Variation
+			isDefault
+			relationship: f34309eb-2520-4153-88ea-25cd22618c67
+			defaultHierarchy: LocalDateTable_fc7ebe9e-ee97-4ee0-91aa-abca5dd8c310.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Always
+		dataType: int64
+		formatString: 0
+		lineageTag: 859caa12-3fa7-4501-98f8-267f90198916
+		summarizeBy: sum
+		sourceColumn: Always
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter no.'
+		dataType: int64
+		formatString: 0
+		lineageTag: 61246345-7375-4c77-9070-ebebe3c902b6
+		summarizeBy: sum
+		sourceColumn: Quarter no.
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dim calendar-b7e037bf-1730-4c1d-b328-fd449d06d11a' = m
+		mode: import
+		source = ```
+				let
+				    StartDate = #date(Date.Year(DateTime.LocalNow())-3, 1, 1),
+				    EndDate = Date.From(DateTime.LocalNow()),
+				    NumberOfDays = Duration.Days( EndDate - StartDate ),
+				    Dates = List.Dates(StartDate, NumberOfDays+1, #duration(1,0,0,0)),
+				    #"Converted to Table" = Table.FromList(Dates, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+				    #"Renamed Columns" = Table.RenameColumns(#"Converted to Table",{{"Column1", "Date"}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"Date", type date}}),
+				    #"Inserted Year" = Table.AddColumn(#"Changed Type", "Year", each Date.Year([Date]), type number),
+				    #"Inserted Month" = Table.AddColumn(#"Inserted Year", "Month no.", each Date.Month([Date]), type number),
+				    #"Inserted Month Number (leading zeros)" = Table.AddColumn(#"Inserted Month", "Month no. (leading zeros)", each Text.PadStart(Text.From([#"Month no."]),2,"0")),
+				    #"Inserted Month Name (long)" = Table.AddColumn(#"Inserted Month Number (leading zeros)", "Month name (long)", each Date.MonthName([Date]), type text),
+				    #"Inserted Month Name (short)" = Table.AddColumn(#"Inserted Month Name (long)", "Month name (short)", each Text.Start([#"Month name (long)"],3)),
+				    #"Inserted Quarter" = Table.AddColumn(#"Inserted Month Name (short)", "Quarter", each "Q"&Text.From(Date.QuarterOfYear([Date]))),
+				    #"Inserted Week of Year" = Table.AddColumn(#"Inserted Quarter", "Week of Year", each Date.WeekOfYear([Date]), type number),
+				    #"Inserted Week of Month" = Table.AddColumn(#"Inserted Week of Year", "Week of Month", each Date.WeekOfMonth([Date]), type number),
+				    #"Inserted Day" = Table.AddColumn(#"Inserted Week of Month", "Day", each Date.Day([Date]), type number),
+				    #"Inserted Day of Week" = Table.AddColumn(#"Inserted Day", "Day of week no.", each if Date.DayOfWeek([Date])=0
+				then 7
+				else Date.DayOfWeek([Date])),
+				    #"Inserted Day of Year" = Table.AddColumn(#"Inserted Day of Week", "Day of Year", each Date.DayOfYear([Date]), type number),
+				    #"Inserted Day Name" = Table.AddColumn(#"Inserted Day of Year", "Day of week", each Date.DayOfWeekName([Date]), type text),
+				    #"Inserted Day of Week short" = Table.AddColumn(#"Inserted Day Name", "Day of week short", each Text.Start([Day of week],3)),
+				    Custom1 = Table.AddColumn(#"Inserted Day of Week short", "DateFormatted", each Text.From([Day])&"-"&Text.From([#"Month no. (leading zeros)"]&"-"&Text.From([Year]))),
+				    #"Inserted Year/Month no" = Table.AddColumn(Custom1, "Year/Month no.", each Text.From([Year])&"/"&Text.From([#"Month no. (leading zeros)"])),
+				    #"Inserted Year/Month name" = Table.AddColumn(#"Inserted Year/Month no", "Year/Month name (short)", each Text.From([Year])&"/"&Text.From([#"Month name (short)"])),
+				    #"Inserted Year/Quarter" = Table.AddColumn(#"Inserted Year/Month name", "Year/Quarter", each Text.From([Year])&"/"&Text.From([Quarter])),
+				    #"Added ISO Week Number" = Table.AddColumn(#"Inserted Year/Quarter", "Week no.", each if
+				Number.RoundDown((Date.DayOfYear([Date])-(Date.DayOfWeek([Date], Day.Monday)+1)+10)/7)=0
+				
+				then 
+				Number.RoundDown((Date.DayOfYear(#date(Date.Year([Date])-1,12,31))-(Date.DayOfWeek(#date(Date.Year([Date])-1,12,31), Day.Monday)+1)+10)/7)
+				
+				else if
+				(Number.RoundDown((Date.DayOfYear([Date])-(Date.DayOfWeek([Date], Day.Monday)+1)+10)/7)=53
+				and (Date.DayOfWeek(#date(Date.Year([Date]),12,31), Day.Monday)+1<4))
+				
+				then
+				1
+				
+				else 
+				Number.RoundDown((Date.DayOfYear([Date])-(Date.DayOfWeek([Date], Day.Monday)+1)+10)/7)),
+				    #"Added ISO Year" = Table.AddColumn(#"Added ISO Week Number", "Year (wk)", each Date.Year(Date.AddDays([Date], 26 - [#"Week no."]))),
+				    #"Inserted Year/week" = Table.AddColumn(#"Added ISO Year", "Year/Week", each Text.From([#"Year (wk)"])&"/"&Text.PadStart(Text.From([#"Week no."]),2,"0")),
+				    #"Inserted WY" = Table.AddColumn(#"Inserted Year/week", "WY", each [#"Day of week no."]*1000000 
+				+[#"Week no."]*10000 
+				+[#"Year (wk)"]),
+				    #"Added Custom6" = Table.AddColumn(#"Inserted WY", "This week", each if
+				Number.RoundDown((Date.DayOfYear(DateTime.LocalNow())-(Date.DayOfWeek(DateTime.LocalNow(), Day.Monday)+1)+10)/7)=0
+				
+				then 
+				Number.RoundDown((Date.DayOfYear(#date(Date.Year(DateTime.LocalNow())-1,12,31))-(Date.DayOfWeek(#date(Date.Year(DateTime.LocalNow())-1,12,31), Day.Monday)+1)+10)/7)
+				
+				else if
+				(Number.RoundDown((Date.DayOfYear(DateTime.LocalNow())-(Date.DayOfWeek(DateTime.LocalNow(), Day.Monday)+1)+10)/7)=53
+				and (Date.DayOfWeek(#date(Date.Year(DateTime.LocalNow()),12,31), Day.Monday)+1<4))
+				
+				then
+				1
+				
+				else 
+				Number.RoundDown((Date.DayOfYear(DateTime.LocalNow())-(Date.DayOfWeek(DateTime.LocalNow(), Day.Monday)+1)+10)/7)),
+				    #"Added Custom7" = Table.AddColumn(#"Added Custom6", "Previous week", each if
+				Number.RoundDown((Date.DayOfYear(Date.AddDays(DateTime.LocalNow(),-7))-(Date.DayOfWeek(Date.AddDays(DateTime.LocalNow(),-7), Day.Monday)+1)+10)/7)=0
+				
+				then 
+				Number.RoundDown((Date.DayOfYear(#date(Date.Year(Date.AddDays(DateTime.LocalNow(),-7))-1,12,31))-(Date.DayOfWeek(#date(Date.Year(Date.AddDays(DateTime.LocalNow(),-7))-1,12,31), Day.Monday)+1)+10)/7)
+				
+				else if
+				(Number.RoundDown((Date.DayOfYear(Date.AddDays(DateTime.LocalNow(),-7))-(Date.DayOfWeek(Date.AddDays(DateTime.LocalNow(),-7), Day.Monday)+1)+10)/7)=53
+				and (Date.DayOfWeek(#date(Date.Year(Date.AddDays(DateTime.LocalNow(),-7)),12,31), Day.Monday)+1<4))
+				
+				then
+				1
+				
+				else 
+				Number.RoundDown((Date.DayOfYear(Date.AddDays(DateTime.LocalNow(),-7))-(Date.DayOfWeek(Date.AddDays(DateTime.LocalNow(),-7), Day.Monday)+1)+10)/7)),
+				    #"Inserted week no. (relative)" = Table.AddColumn(#"Added Custom7", "Week no. (relative)", each if [#"Week no."] = [This week] then "This week" else if [#"Week no."] = [Previous week] then "Previous week" else [#"Week no."]),
+				    #"Added Custom9" = Table.AddColumn(#"Inserted week no. (relative)", "This year (wk)", each Date.Year(Date.AddDays(DateTime.LocalNow(), 26 - [This week]))),
+				    #"Inserted year (wk) (relative)" = Table.AddColumn(#"Added Custom9", "Year (wk) (relative)", each if [#"Year (wk)"]=[#"This year (wk)"]
+				then "This year"
+				else [#"Year (wk)"]),
+				    #"Removed Columns" = Table.RemoveColumns(#"Inserted year (wk) (relative)",{"This week", "Previous week", "This year (wk)"}),
+				    #"Inserted year (relative)" = Table.AddColumn(#"Removed Columns", "Year (relative)", each if [Year]=Date.Year(DateTime.LocalNow())
+				then "This year"
+				else [Year]),
+				    #"Inserted quarter (relative)" = Table.AddColumn(#"Inserted year (relative)", "Quarter (relative)", each if [Quarter]="Q"&Text.From(Date.QuarterOfYear(DateTime.LocalNow()))
+				then "This quarter"
+				else if [Quarter]="Q"&Text.From(Date.QuarterOfYear(DateTime.LocalNow())-1) or [Quarter]="Q"&Text.From(Date.QuarterOfYear(DateTime.LocalNow())+3)
+				then "Previous quarter"
+				else [Quarter]),
+				    #"Inserted month name (relative)" = Table.AddColumn(#"Inserted quarter (relative)", "Month name (relative)", each if [#"Month no."]=Date.Month(DateTime.LocalNow())
+				then "This month"
+				else if [#"Month no."]=Date.Month(DateTime.LocalNow())-1 or [#"Month no."]=Date.Month(DateTime.LocalNow()) +11
+				then "Previous month"
+				else [#"Month name (long)"]),
+				    #"Inserted Day of Year (wk)" = Table.AddColumn(#"Inserted month name (relative)", "Day of Year (wk) ", each Duration.Days(
+				    [Date]-
+				    Date.AddDays(#date([#"Year (wk)"],1,4),-1*
+				    (
+				        if Date.DayOfWeek(#date([#"Year (wk)"],1,4))=0
+				        then 0
+				        else Date.DayOfWeek(#date([#"Year (wk)"],1,4))
+				    ))
+				)),
+				    #"Added Custom" = Table.AddColumn(#"Inserted Day of Year (wk)", "Start date year", each Date.AddDays(#date([#"Year (wk)"],1,4),1+
+				-1*
+				    (
+				        if Date.DayOfWeek(#date([#"Year (wk)"],1,4))=0
+				        then 0
+				        else Date.DayOfWeek(#date([#"Year (wk)"],1,4))
+				    ))),
+				    #"Added Custom1" = Table.AddColumn(#"Added Custom", "Always", each 1),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Added Custom1",{{"Year", Int64.Type}, {"Month no.", Int64.Type}, {"Month no. (leading zeros)", type text}, {"Month name (long)", type text}, {"Month name (short)", type text}, {"Quarter", type text}, {"Week of Year", Int64.Type}, {"Week of Month", Int64.Type}, {"Day", Int64.Type}, {"Day of week no.", Int64.Type}, {"Day of Year", Int64.Type}, {"Day of week", type text}, {"Day of week short", type text}, {"Year/Month no.", type text}, {"Year/Month name (short)", type text}, {"Year/Quarter", type text}, {"Week no.", Int64.Type}, {"Year (wk)", Int64.Type}, {"Year/Week", type text}, {"WY", Int64.Type}, {"Week no. (relative)", type text}, {"Year (wk) (relative)", type text}, {"Year (relative)", type text}, {"Quarter (relative)", type text}, {"Month name (relative)", type text}, {"Day of Year (wk) ", Int64.Type}, {"Start date year", type date}, {"Always", Int64.Type}, {"DateFormatted", type text}}),
+				    #"Inserted Quarter1" = Table.AddColumn(#"Changed Type1", "Quarter.1", each Date.QuarterOfYear([Date]), Int64.Type),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Inserted Quarter1",{{"Quarter.1", "Quarter no."}})
+				in
+				    #"Renamed Columns1"
+				```
+
+	annotation PBI_ResultType = Table
+
