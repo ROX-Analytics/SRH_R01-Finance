@@ -267,6 +267,19 @@
             "width": 234
           },
           "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3458.0968428412625,
+            "y": 505.9669020333281
+          },
+          "nodeIndex": "Dim Mapping GL Structure",
+          "nodeLineageTag": "f797c922-0dd1-4a19-a7ea-695bc6758032",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "All tables",
