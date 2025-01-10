@@ -10,8 +10,8 @@
       "nodes": [
         {
           "location": {
-            "x": 1798.399975990829,
-            "y": 927.99020282685956
+            "x": 1674.3036376106465,
+            "y": 521.09826463731508
           },
           "nodeIndex": "Measure Table",
           "nodeLineageTag": "32200705-3727-49ed-87d7-104a2359c42d",
@@ -23,8 +23,8 @@
         },
         {
           "location": {
-            "x": 2082.3999759908293,
-            "y": 927.99020282685956
+            "x": 1958.3036376106465,
+            "y": 521.09826463731508
           },
           "nodeIndex": "_Predefined date slicer",
           "nodeLineageTag": "3b58a127-acbe-4059-b93c-4d3c18d2b707",
@@ -36,8 +36,8 @@
         },
         {
           "location": {
-            "x": 2366.3999759908293,
-            "y": 1001.9902028268596
+            "x": 2242.3036376106465,
+            "y": 595.09826463731508
           },
           "nodeIndex": "Databases",
           "nodeLineageTag": "e264f338-61c0-49bf-97a4-7832cc89a1a3",
@@ -49,8 +49,8 @@
         },
         {
           "location": {
-            "x": 2650.3999759908293,
-            "y": 1001.9902028268596
+            "x": 2526.3036376106465,
+            "y": 595.09826463731508
           },
           "nodeIndex": "Date Last Refreshed",
           "nodeLineageTag": "0301fbe1-26e6-4368-964d-7869fbdcb112",
@@ -62,24 +62,11 @@
         },
         {
           "location": {
-            "x": 206.51595105468789,
-            "y": 1945.9804056537193
+            "x": 522.44354410135315,
+            "y": 755.12653840757957
           },
           "nodeIndex": "Dim Account Class",
           "nodeLineageTag": "e1238fb4-05ce-4a9d-92ad-ea3a64ee6f16",
-          "size": {
-            "height": 200,
-            "width": 234
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {
-            "x": 261.280774380727,
-            "y": 323.80789386355173
-          },
-          "nodeIndex": "Dim BTW Trans",
-          "nodeLineageTag": "e3ba40e1-bd3c-4d64-9b95-963c4b5b1317",
           "size": {
             "height": 224,
             "width": 234
@@ -88,8 +75,8 @@
         },
         {
           "location": {
-            "x": 600.21640114568186,
-            "y": 343.59610391425349
+            "x": 10,
+            "y": 550.75048626412263
           },
           "nodeIndex": "Dim calendar",
           "nodeLineageTag": "a2190c38-f790-4ef8-8aa5-eac14159ee43",
@@ -101,8 +88,8 @@
         },
         {
           "location": {
-            "x": 428.91521664323648,
-            "y": 1400.2533485069007
+            "x": 157.28894871637226,
+            "y": 904.13635018869775
           },
           "nodeIndex": "Dim Company",
           "nodeLineageTag": "e9f2570d-b1c4-4f45-9eec-79a63a23a47c",
@@ -114,8 +101,8 @@
         },
         {
           "location": {
-            "x": 886.54439527366139,
-            "y": 207.45146152927896
+            "x": 437.44307811730158,
+            "y": 50.9952068488077
           },
           "nodeIndex": "Dim Crediteur",
           "nodeLineageTag": "aaa9da5f-f29e-429c-a28c-23fa4e9b38d7",
@@ -127,8 +114,8 @@
         },
         {
           "location": {
-            "x": 548.344881075664,
-            "y": -10
+            "x": 136.66973382196846,
+            "y": 197.09025674566055
           },
           "nodeIndex": "Dim Debiteur",
           "nodeLineageTag": "4731e79e-ac12-4b5b-b8fd-a5702af960ae",
@@ -140,8 +127,8 @@
         },
         {
           "location": {
-            "x": 1123.1245651429947,
-            "y": 646.89943244852952
+            "x": 809.61855189578523,
+            "y": 517.51349503204369
           },
           "nodeIndex": "Dim GL",
           "nodeLineageTag": "890939a3-b0b4-41c0-bb7a-91e293a03272",
@@ -153,8 +140,8 @@
         },
         {
           "location": {
-            "x": 136.86680725832548,
-            "y": 601.10628855306732
+            "x": 2810.3036376106465,
+            "y": 521.09826463731508
           },
           "nodeIndex": "Dim Journal Headers",
           "nodeLineageTag": "a68d9926-63c5-4223-8a37-46bddedf928a",
@@ -166,47 +153,8 @@
         },
         {
           "location": {
-            "x": 10,
-            "y": 1717.4439885533784
-          },
-          "nodeIndex": "Dim Omzet Rekening Type",
-          "nodeLineageTag": "58594a0b-c24e-4e20-8aa7-bef77eb893b6",
-          "size": {
-            "height": 176,
-            "width": 234
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {
-            "x": 836.07026767517436,
-            "y": 936.75388711392509
-          },
-          "nodeIndex": "Dim Transaction Type GL",
-          "nodeLineageTag": "8c21fe0e-ee65-4c41-a53a-ea819a3985a5",
-          "size": {
-            "height": 200,
-            "width": 234
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {
-            "x": 493.50552550837244,
-            "y": 1700.5151743530573
-          },
-          "nodeIndex": "Dim Valuta",
-          "nodeLineageTag": "221e93a9-d50d-4d08-ba54-ce68b3a3c7e1",
-          "size": {
-            "height": 300,
-            "width": 234
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {
-            "x": 2934.3999759908293,
-            "y": 1001.9902028268596
+            "x": 3094.3036376106465,
+            "y": 595.09826463731508
           },
           "nodeIndex": "Parameter Y/M/W",
           "nodeLineageTag": "020f2b4c-395d-4d42-9395-c3281352ce27",
@@ -218,8 +166,8 @@
         },
         {
           "location": {
-            "x": 1489.0805873165737,
-            "y": 651.0056263773954
+            "x": 1123.4401890948971,
+            "y": -10
           },
           "nodeIndex": "Dim Mapping GL Structure Resultaat",
           "nodeLineageTag": "f797c922-0dd1-4a19-a7ea-695bc6758032",
@@ -231,8 +179,8 @@
         },
         {
           "location": {
-            "x": 1217.3813882251793,
-            "y": 293.06794353675559
+            "x": 1227.12998702806,
+            "y": 517.61563838531538
           },
           "nodeIndex": "Dim Mapping GL Structure Balans",
           "nodeLineageTag": "d53b4463-ba81-4b46-b99a-ca9013406036",
@@ -244,8 +192,8 @@
         },
         {
           "location": {
-            "x": 3218.3999759908293,
-            "y": 1001.9902028268596
+            "x": 3378.3036376106465,
+            "y": 595.09826463731508
           },
           "nodeIndex": "Brutowinst Field Parameters",
           "nodeLineageTag": "01a8118a-4e39-4cde-b5f0-612311183407",
@@ -257,8 +205,8 @@
         },
         {
           "location": {
-            "x": 3502.3999759908293,
-            "y": 1013.9902028268596
+            "x": 3662.3036376106465,
+            "y": 607.09826463731508
           },
           "nodeIndex": "Dim Financiele Prestatie",
           "nodeLineageTag": "bb343835-caf3-4064-b93b-8b3b8d90bc1b",
@@ -270,8 +218,8 @@
         },
         {
           "location": {
-            "x": 549.68872612578866,
-            "y": 1049.013652654864
+            "x": 553.44390327746794,
+            "y": 1032.1965292746304
           },
           "nodeIndex": "Fact Balans Entries",
           "nodeLineageTag": "463b409c-90ae-4f5c-8a65-242f10a4e870",
@@ -283,8 +231,8 @@
         },
         {
           "location": {
-            "x": 503.18595541577344,
-            "y": 695.45844197223937
+            "x": 423.68623412168768,
+            "y": 404.69588247267666
           },
           "nodeIndex": "Fact Winst/Verlies Entries",
           "nodeLineageTag": "b4bbab32-cd8f-41df-81ae-e82b74cc1f64",
@@ -296,8 +244,8 @@
         },
         {
           "location": {
-            "x": 1524.3999759908284,
-            "y": 471.87366692253227
+            "x": 962.81585421138425,
+            "y": 870.39760453009922
           },
           "nodeIndex": "Dim Koersverschillen GL",
           "nodeLineageTag": "bae324fc-f9a1-4888-8b7b-0d2b2c6e27f5",
@@ -309,8 +257,8 @@
         },
         {
           "location": {
-            "x": 1271.5923823659077,
-            "y": 999.83941386702236
+            "x": 1400.3036376106461,
+            "y": 338.75352248478839
           },
           "nodeIndex": "Dim Mapping GL PL Flag",
           "nodeLineageTag": "c98c336f-b4a3-4882-b1f5-ea424fcbb978",
@@ -322,8 +270,8 @@
         },
         {
           "location": {
-            "x": 3786.3999759908293,
-            "y": 1001.9902028268596
+            "x": 3946.3036376106465,
+            "y": 595.09826463731508
           },
           "nodeIndex": "PL Current/YTD",
           "nodeLineageTag": "0230f558-e6c7-49a5-95b2-19841f5cff2e",
